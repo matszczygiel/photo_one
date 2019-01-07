@@ -1,0 +1,23 @@
+PHOTON_EN               26.675
+
+PATH_IN      	        /home/mateusz/Documents/cpp/photo/data/at_h/
+FILES_1E		        file1E_He_k      .F
+FILES_NORM		        norm1E_He_k      .F
+FILE_HF_I_VEC	        H_c.dat
+FILE_HF_I_EN            H_e.dat
+
+GAUGE			        dipole
+
+WRITE	    		    Y
+PATH_OUT                /home/mateusz/Documents/cpp/photo/data/at_h/res/
+FILE_OUT	            res.out
+
+NUMBER_GTO              3
+NUMBER_PWGTO            56
+MAX_L                   5
+NAME                    dog
+K_THETA                 1.570796
+K_PHI                   0
+POL_THETA               0
+POL_PHI                 0
+

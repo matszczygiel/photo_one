@@ -1,0 +1,22 @@
+PHOTON_EN           52.4
+
+PATH_IN      	    <path>
+FILES_1E		    [<name of file>, auto] //text file with names of binary files
+FILES_NORM		    [<name of file>, auto] //text file with names of binary files
+FILE_HF_I_VEC	    [<name of file>, auto]
+FILE_HF_I_EN        [<name of file>, auto]
+
+GAUGE			    [velocity, dipole] //upper or lower case
+
+WRITE	    		[Y,N] //upper or lower case
+PATH_OUT            <path>
+FILE_OUT		    <name of file>
+
+NUMBER_GTO          74
+NUMBER_PWGTO        10
+MAX_L               2
+NAME                dod1
+K_THETA             0
+K_PHI               0     
+POL_THETA           0                 
+POL_PHI             0
