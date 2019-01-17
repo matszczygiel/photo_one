@@ -16,7 +16,6 @@
 #include <complex>
 #include <cstdlib>
 #include <eigen3/Eigen/Dense>
-#include <eigen3/Eigen/Eigenvalues>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -126,7 +125,7 @@ int main(int argc, char *argv[]) {
         } else
             throw std::runtime_error("Invalid argument for GAUGE.");
 
-        const auto S   = reader.load_S(ints_files.at(i));
+        const auto S = reader.load_S(ints_files.at(i));
 
         // Dipole moment
         Vector3cd T;
@@ -136,7 +135,7 @@ int main(int argc, char *argv[]) {
         T(2) = vecc.dot(Dz.bottomLeftCorner(bkl, bnkl) * veci);
 
         //normalize to energy scale
-        T *= sqrt(kval);
+        T *= std::sqrt(kval);
 
         cout << " Dipole moment: \n";
         cout << T << "\n\n";
@@ -145,10 +144,6 @@ int main(int argc, char *argv[]) {
         j(0) = sin(ptheta) * cos(pphi);
         j(1) = sin(ptheta) * sin(pphi);
         j(2) = cos(ptheta);
-
-        //    double E_rep_corr = (pk_R_kp + pk_R_pk) / (0.5 * norm_psi);
-
-        //  cout << " Electron repulsion energy: " << E_rep_corr << "\n\n";
 
         // keep this for H
         sigma.at(i) = sigma_tot_spherical_symetry(photon, T);

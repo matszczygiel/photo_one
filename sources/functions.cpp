@@ -53,14 +53,15 @@ Eigen::VectorXcd fetch_coulomb_wf(const int& lmax, const Eigen::Vector3d& kvec,
         for (int p = 0; p <= l; p++)
             for (int q = 0; q <= l - p; q++) {
                 Dfact[l][p][q] = 0.0;
+                const int r = l - p - q;
+
                 for (int m = -l; m <= l; m++)
-                    Dfact[l][p][q] += Harmonics::NoNormCalcClmR(l, m, p, q, l - p - q) *
+                    Dfact[l][p][q] += Harmonics::NoNormCalcClmR(l, m, p, q, r) *
                                       Harmonics::Y(l, m, kvec);
 
-                int r = l - p - q;
-                int argx = (p == 0) ? 1 : 2 * p - 1;
-                int argy = (q == 0) ? 1 : 2 * q - 1;
-                int argz = (r == 0) ? 1 : 2 * r - 1;
+                const int argx = (p == 0) ? 1 : 2 * p - 1;
+                const int argy = (q == 0) ? 1 : 2 * q - 1;
+                const int argz = (r == 0) ? 1 : 2 * r - 1;
 
                 Dfact[l][p][q] *= pow(M_PI, 0.25) / pow(2.0, 0.25 + l) *
                                   sqrt(double_factorial<double>(argx) *
