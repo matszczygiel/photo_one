@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
     std::stringstream stream;
     stream << std::fixed << std::setprecision(3) << kval;
     const std::string k_str = stream.str();
-    std::cout << "K:  " << k_str << "\n";
+    std::cout << k_str << "\n";
 
     if (setting == "-dump")
         return 0;
