@@ -1,0 +1,22 @@
+PHOTON_EN 27.21
+
+PATH_IN       /home/mateusz/Documents/photo/h/deploy/
+FILES_1E                ints/file1E_h_k      .F
+FILES_NORM              ints/norm1E_h_k      .F
+FILE_HF_I_VEC           data/H_c.dat
+FILE_HF_I_EN            data/H_e.dat
+
+GAUGE                   velocity
+
+WRITE                   Y
+PATH_OUT       /home/mateusz/Documents/photo/h/deploy/res/outps/
+FILE_OUT                res_vel.out
+
+NUMBER_GTO       9
+NUMBER_PWGTO            165
+MAX_L                   8
+NAME                    dol
+K_THETA                 1.570796
+K_PHI                   0
+POL_THETA               0
+POL_PHI                 0

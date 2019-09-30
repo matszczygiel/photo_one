@@ -1,0 +1,6 @@
+b = open("tmp_data/basis_l.dat", 'r')
+b_line = b.readline()
+b.close()
+b_new = open("basis_l.dat", 'w')
+b_new.write(b_line.split()[7] + "\n")
+b_new.close()
